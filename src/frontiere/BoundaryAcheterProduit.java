@@ -20,7 +20,7 @@ public class BoundaryAcheterProduit {
 		if (gauloisVendeur == null) {
 			System.out.println("Désolé, personne ne vend ce produit au marché.\n");
 		} else {
-			afficherListeVendeur(gauloisVendeur);
+			afficherListeVendeur(gauloisVendeur,produit);
 			String choixVendeur = scan.next();
 			String nomVendeur = gauloisVendeur[Integer.parseInt(choixVendeur)-1].getNom();
 			
@@ -36,9 +36,9 @@ public class BoundaryAcheterProduit {
 		}
 	}
 	
-	private void afficherListeVendeur(Gaulois[] gauloisVendeur) {
+	private void afficherListeVendeur(Gaulois[] gauloisVendeur,String produit) {
 		StringBuilder chaine = new StringBuilder();
-		chaine.append("Chez quel commerçant voulez-vous acheter des fleurs? \n");
+		chaine.append("Chez quel commerçant voulez-vous acheter des " + produit + "? \n");
 		if (gauloisVendeur != null) {
 			for (int i = 0; i < gauloisVendeur.length; i++) {
 				chaine.append((i+1) + " - " + gauloisVendeur[i].getNom() + "\n");
